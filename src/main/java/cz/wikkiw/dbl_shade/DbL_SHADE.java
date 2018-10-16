@@ -308,8 +308,12 @@ public class DbL_SHADE {
                     meanS_CR2 += (wS.get(s) / wSsum) * this.S_CR.get(s);
                 }
 
-                this.M_F[k] = (meanS_F1 / meanS_F2);
-                this.M_CR[k] = (meanS_CR1 / meanS_CR2);
+                if(meanS_F2 != 0) {
+                    this.M_F[k] = (meanS_F1 / meanS_F2);
+                }
+                if(meanS_CR2 != 0) {
+                    this.M_CR[k] = (meanS_CR1 / meanS_CR2);
+                }
 
                 k++;
                 if (k >= this.H) {
